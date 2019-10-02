@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Calculator</title>
+</head>
+<body>
+
+<h1>Calculator</h1>
+<div id= "display"></div>
+<div id="numpad">
+	<button class="number">7</button>
+	<button class="number">8</button>
+	<button class="number">9</button>
+	<button class="number" id="plus">+</button><br>
+	<button class="number">4</button>
+	<button class="number">5</button>
+	<button class="number">6</button>
+	<button class="number" id="subtract">-</button><br>
+	<button class="number">1</button>
+	<button class="number">2</button>
+	<button class="number">3</button>
+	<button class="number" id="multiply">*</button><br>
+	<button class="number">.</button>
+	<button class="number">0</button>
+	<button id="solve">=</button>
+	<button class="number" id="divide">/</button><br>
+	<button id="clear" style="width: 85px">CLEAR</button>
+	<button id="backspace"><-</button>
+
+</div>
+
+<script type="text/javascript">
+ let numbers =  document.querySelectorAll(".number")
+ // let operations = document.querySelectorAll(".operation")
+
+solve.disabled =true
+divide.disabled = true
+multiply.disabled=true
+plus.disabled=true
+subtract.disabled=true
+
+// operation.forEach(function(op){
+
+// })
+ numbers.forEach(function (btn) {
+ 	btn.addEventListener("click", function(){
+ 		display.innerHTML += btn.innerHTML
+ 		
+ 		if (display.innerHTML == "") {
+ 			solve.disabled =true
+			divide.disabled = true
+			multiply.disabled=true
+			plus.disabled=true
+			subtract.disabled=true
+			console.log("hi")
+ 		}else{
+ 			solve.disabled =false
+ 			divide.disabled = false
+			multiply.disabled=false
+			plus.disabled=false
+			subtract.disabled=false
+			console.log("hello")
+ 		}
+ 		
+ 	})
+ })
+ solve.addEventListener("click", function(){
+ 	display.innerHTML = eval(display.innerHTML) 
+ })
+clear.addEventListener("click", function(){
+	display.innerHTML = ""
+
+ 		if (display.innerHTML == "") {
+ 			solve.disabled =true
+			divide.disabled = true
+			multiply.disabled=true
+			plus.disabled=true
+			subtract.disabled=true
+			console.log("hi")
+ 		}else{
+ 			solve.disabled =false
+ 			divide.disabled = false
+			multiply.disabled=false
+			plus.disabled=false
+			subtract.disabled=false
+			console.log("hello")
+ 		}
+ 		
+})
+backspace.addEventListener("click", function(){
+	display.innerHTML = display.innerHTML.substring(0, display.innerHTML.length-1)
+	
+ 		if (display.innerHTML == "") {
+ 			solve.disabled =true
+			divide.disabled = true
+			multiply.disabled=true
+			plus.disabled=true
+			subtract.disabled=true
+			console.log("hi")
+ 		}else{
+ 			solve.disabled =false
+ 			divide.disabled = false
+			multiply.disabled=false
+			plus.disabled=false
+			subtract.disabled=false
+			console.log("hello")
+ 		}
+ 		
+})
+</script>
+</body>
+</html>
